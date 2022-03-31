@@ -21,13 +21,10 @@ connection = pymysql.connect(
         password = password,
         database = db_name
     )
-print("succes")
 
-print(datetime(2,2))
 
 with connection.cursor() as cursor:
-    # create_table_query = "SELECT * from rooms join booking on rooms.room_id = booking.room_id where start_time = '2022-01-04 06:00:00'"
-    create_table_query = "SELECT name from rooms WHERE capacity >=" +str(2) +  " AND name NOT IN ( SELECT name from rooms join booking on rooms.room_id = booking.room_id" +" WHERE start_time = "+ datetime(2,2)+ ")"
+    create_table_query = "SELECT * from users"
     cursor.execute(create_table_query)
     rows = cursor.fetchall()
 
