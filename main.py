@@ -47,7 +47,6 @@ if (_acc == 1):
         create_table_query = "SELECT COUNT(login) from users WHERE login =\'" +str(_login) +"\'"
         cursor.execute(create_table_query)
         rows = cursor.fetchall()
-    print(rows[0][0])
     if (rows[0][0] == 0):
             with connection.cursor() as cursor:
                 insert_query = "INSERT INTO users (login, password) VALUES ( \'"+ str(_login) + "\', \'"+ str(_password)+"\');"
@@ -109,7 +108,7 @@ k = 0
 for i in range(0, len(rows)):
     print (i+1, end=": ")
     print(rows[i][0]) 
-print(str(len(rows)+1) + ": choose other rooms")
+print(str(len(rows)+1) + ": choose other rooms (не все планы успели стать явью)")
 
 
 
